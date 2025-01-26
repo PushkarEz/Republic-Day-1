@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Republic Day</title>
+    <!-- Stylesheet -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #000000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+      }
+
+      #main-content {
+        display: none;
+      }
+
+      .intro {
+        cursor: pointer;
+        font-size: 2rem;
+        text-align: center;
+        padding: 10px 20px;
+        border: 2px solid #ffffff;
+        border-radius: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        background: none;
+      }
+
+      .intro:hover {
+        background: linear-gradient(to right, #ff8011, #ffffff, #75fc3b);
+        color: #000000;
+      }
+
+      .clr-orange,
+      .clr-white,
+      .clr-green {
+        height: 33.33vh;
+        width: 0;
+        position: absolute;
+        animation: grow 2s forwards;
+      }
+
+      .clr-orange {
+        background: linear-gradient(to bottom, #ff8011, #ffae4a);
+        top: 0;
+        left: 0;
+      }
+
+      .clr-white {
+        background: #ffffff;
+        top: 33.33vh;
+        right: 0;
+      }
+
+      .clr-green {
+        background: linear-gradient(to bottom, #75fc3b, #46ad1b);
+        bottom: 0;
+        left: 0;
+      }
+
+      @keyframes grow {
+        100% {
+          width: 100vw;
+        }
+      }
+
+      .ashoka-chakra {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        width: 0;
+        animation: spin 3s 2s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          width: 30vmin;
+        }
+
+        100% {
+          width: 30vmin;
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Initial page content -->
+    <div id="intro-page">
+      <div class="intro" onclick="showMainPage()">Click here</div>
+    </div>
+
+    <!-- Main page content -->
+    <div id="main-content">
+      <div class="clr-orange"></div>
+      <div class="clr-white"></div>
+      <div class="clr-green"></div>
+      <img
+        class="ashoka-chakra"
+        src="https://static.vecteezy.com/system/resources/previews/019/767/958/non_2x/ashok-chakra-logo-ashok-chakra-icon-transparent-free-png.png"
+        alt="Ashoka Chakra"
+      />
+    </div>
+
+    <script>
+      function showMainPage() {
+        document.getElementById('intro-page').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }
+    </script>
+  </body>
+</html>
